@@ -3,10 +3,10 @@ import "dotenv/config";
 
 
 // Your MongoDB connection URI. This should ideally be fetched from environment variables.
-const mongoURI = process.env.MONGODB_URL as string;
+const mongoURI = process.env.MONGODB_URL;
 
 // Connect to MongoDB using Mongoose
-mongoose.connect(mongoURI as string);
+mongoose.connect(mongoURI);
 
 // Get the default connection
 const db = mongoose.connection;
