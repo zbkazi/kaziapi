@@ -4,7 +4,7 @@ import express, { Request, Response } from 'express';
 const app = express();
 
 // Define a port number
-const PORT: number = 3000;
+const PORT = process.env.PORT || 4000;
 
 // Define some routes
 app.get('/', (_req: Request, res: Response) => {
