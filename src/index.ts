@@ -1,12 +1,17 @@
-import express from 'express';
+import express, { Request, Response } from 'express';
 
+// Create an Express application
 const app = express();
-const PORT = process.env.PORT || 3000; // Use the port specified by the environment variable or default to 3000
 
-app.get('/', (req, res) => {
-  res.send('Hello, world!');
-});
+// Define a port number
+const PORT: number = parseInt(process.env.PORT || '4000', 10);
 
+// Define some routes
+app.get('/', (_req: Request, res: Response) =>{
+  res.status(200).send('hello kazi api')
+})
+
+// Start the server
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+  console.log(`Server is running on http://localhost:${PORT}`);
 });
