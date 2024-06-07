@@ -7,15 +7,15 @@ const app = express();
 const PORT: number = 3000;
 
 // Define some routes
-app.get('/', (req: Request, res: Response) => {
+app.get('/', (_req: Request, res: Response) => {
   res.send('Hello, World!');
 });
 
-app.get('/about', (req: Request, res: Response) => {
+app.get('/about', (_req: Request, res: Response) => {
   res.send('About page');
 });
 
-app.get('/contact', (req: Request, res: Response) => {
+app.get('/contact', (_req: Request, res: Response) => {
   res.send('Contact page');
 });
 
