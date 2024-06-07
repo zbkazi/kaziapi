@@ -10,7 +10,7 @@ app.use(express.static("public"));
 app.use(cors());
 app.use(morgan("dev"));
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 10000; // Default port is 10000
 
 app.get("/", (_req, res) => {
   res.send("<h1>Hello Kazi Byte!, Welcome to Kazi Byte API</h1>");
