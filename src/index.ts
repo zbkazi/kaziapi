@@ -1,17 +1,31 @@
-import express, { Request, Response } from 'express';
+import app from "./app";
+// import db from "./config/dbUrl";
+import "dotenv/config";
 
-// Create an Express application
-const app = express();
+app;
+// db;
 
-// Define a port number
-const PORT: number = parseInt(process.env.PORT || '4000', 10);
+// error handling middleware
 
-// Define some routes
-app.get('/', (_req: Request, res: Response) =>{
-  res.status(200).send('hello kazi api')
-})
+// 404 not found middleware
+app.use((_req, res, _next) => {
+  return res.status(404).json({
+    success: false,
+    message: "Not found",
+  });
+});
+// server error middleware
+app.use((err, _req, res, _next) => {
+  return res.status(500).json({
+    success: false,
+    message: err.message,
+  });
+});
 
-// Start the server
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+// bad request middleware
+app.use((err, _req, res, _next) => {
+  return res.status(400).json({
+    success: false,
+    message: err.message,
+  });
 });
