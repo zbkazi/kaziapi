@@ -1,0 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+// db.js
+const mongoose = require("mongoose");
+const mongoURI = "mongodb+srv://exzobaidulkazi:m5tgIU0YPwY3A0q3@cluster0.f143vc0.mongodb.net/kaziapiDB";
+mongoose.set("strictQuery", true);
+mongoose.connect(mongoURI);
+const db = mongoose.connection;
+db.on("error", console.error.bind(console, "MongoDB connection error:"));
+db.once("open", () => {
+    console.log("Connected to MongoDB success");
+});
+exports.default = db;
+//# sourceMappingURL=db.js.map
