@@ -18,13 +18,6 @@ app.get("/", (_req, res) => {
   res.send("<h1>Hello Kazi Byte!, Welcome to Kazi Byte API</h1>");
 });
 
-app.get('/hi', (_req, res) => {
-  res.status(200).json({
-    messages: "Success",
-    OK: "OK, Now Live Now....."
-
-  })
-})
 
 app.listen(port, host, () => {
   console.log(`Server is running on port ${port}`);
