@@ -8,6 +8,11 @@ yarn-error.log*
 lerna-debug.log*
 .pnpm-debug.log*
 
+
+#dist
+dist
+.dist
+
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
@@ -63,6 +68,7 @@ web_modules/
 .rts2_cache_cjs/
 .rts2_cache_es/
 .rts2_cache_umd/
+dist
 
 # Optional REPL history
 .node_repl_history
@@ -87,7 +93,7 @@ web_modules/
 # Next.js build output
 .next
 out
-dist
+
 
 # Nuxt.js build / generate output
 .nuxt
